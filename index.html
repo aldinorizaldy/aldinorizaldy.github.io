@@ -4,113 +4,281 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aldino Rizaldy - PhD Researcher</title>
+    <!-- FontAwesome icons for social/academic links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #0070f3;
+            --text-dark: #111111;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --border: #eaeaea;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #fafafa;
-            color: #333;
+            background-color: var(--bg-body);
+            color: var(--text-main);
             line-height: 1.6;
             margin: 0;
             padding: 40px 20px;
         }
+
         .container {
-            max-width: 650px;
+            max-width: 720px;
             margin: 0 auto;
-            background: #ffffff;
+            background: var(--bg-card);
             padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
-        h1 {
+
+        /* Profile Header */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--border);
+        }
+
+        .header-text h1 {
             font-size: 32px;
-            margin-bottom: 10px;
-            color: #111;
+            margin: 0 0 6px 0;
+            color: var(--text-dark);
+            letter-spacing: -0.5px;
         }
-        .bio {
+
+        .header-text .subtitle {
             font-size: 16px;
-            color: #444;
-            margin-bottom: 40px;
+            color: var(--text-muted);
+            margin: 0 0 12px 0;
+            font-weight: 500;
         }
+
+        /* Social / Academic Links */
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .social-links a {
+            color: var(--text-muted);
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Section Styling */
         h2 {
             font-size: 20px;
-            border-bottom: 2px solid #eaeaea;
+            color: var(--text-dark);
+            border-bottom: 2px solid var(--border);
             padding-bottom: 8px;
-            margin-bottom: 20px;
-            color: #222;
+            margin-top: 36px;
+            margin-bottom: 18px;
         }
+
+        /* Bio & Research Interests */
+        .bio {
+            font-size: 15px;
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            background-color: #f0f4f8;
+            color: #0052cc;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 16px;
+        }
+
+        /* Publications List */
         .publications {
             list-style: none;
             padding: 0;
             margin: 0;
         }
+
         .publication-item {
-            margin-bottom: 20px;
-            font-size: 15px;
+            margin-bottom: 22px;
+            padding-bottom: 16px;
+            border-bottom: 1px dotted var(--border);
         }
+
+        .publication-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
         .pub-title {
             font-weight: 600;
-            color: #111;
+            font-size: 16px;
+            color: var(--text-dark);
             display: block;
+            margin-bottom: 2px;
         }
+
         .pub-authors {
-            color: #555;
-            font-style: italic;
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 2px;
         }
+
+        .pub-authors strong {
+            color: var(--text-dark);
+        }
+
         .pub-venue {
-            color: #666;
+            color: #555;
+            font-size: 14px;
+            font-weight: 500;
         }
+
         .pub-links {
-            margin-top: 5px;
+            margin-top: 8px;
             font-size: 13px;
         }
+
         .pub-links a {
-            color: #0070f3;
+            color: var(--primary);
             text-decoration: none;
-            margin-right: 12px;
+            margin-right: 14px;
+            font-weight: 500;
         }
+
         .pub-links a:hover {
             text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            body { padding: 15px 10px; }
+            .container { padding: 24px; }
+            .header { flex-direction: column; text-align: center; gap: 16px; }
+            .social-links { justify-content: center; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Header -->
-        <h1>Aldino Rizaldy</h1>
-        
-        <!-- Short Profile Paragraph -->
-        <p class="bio">
-            Deep learning and 3D Point Cloud enthusiast
-        </p>
-        
-        <!-- Publications Section -->
-        <h2>Publications</h2>
-        <ul class="publications">
+        <!-- Header / Main Profile -->
+        <header class="header">
+            <!-- Replace image link with your photo (e.g. avatar.jpg in the same directory) -->
+            <img src="https://via.placeholder.com/150" alt="Aldino Rizaldy" class="profile-img">
+            <div class="header-text">
+                <h1>Aldino Rizaldy</h1>
+                <div class="subtitle">PhD Researcher | Deep Learning & 3D Point Cloud</div>
+                
+                <!-- Social & Scholarly Links -->
+                <div class="social-links">
+                    <a href="mailto:your.email@university.edu"><i class="fa-solid fa-envelope"></i> Email</a>
+                    <a href="https://scholar.google.com" target="_blank"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+                    <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://orcid.org" target="_blank"><i class="fa-brands fa-orcid"></i> ORCID</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- About / Bio Section -->
+        <section>
+            <h2>About Me</h2>
+            <p class="bio">
+                I am a PhD Researcher specializing in deep learning methodologies applied to 3D point cloud processing, remote sensing, and spatial data analysis. My research focuses on spatial-spectral transformers, neural networks, and semantic segmentation for large-scale 3D environment understanding.
+            </p>
             
-            <!-- Publication 1 -->
-            <li class="publication-item">
-                <span class="pub-title">Multi-Stream Neural Network</span>
-                <span class="pub-authors">Aldino Rizaldy</span>
-                <div class="pub-venue">Remote Sensing, 2024</div>
-                <div class="pub-links">
-                    <a href="#" target="_blank">[PDF]</a>
-                    <a href="#" target="_blank">MDPI</a>
-                </div>
-            </li>
+            <div class="tags">
+                <span class="tag">3D Point Cloud</span>
+                <span class="tag">Deep Learning</span>
+                <span class="tag">Remote Sensing</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">Transformers</span>
+            </div>
+        </section>
 
-            <!-- Publication 2 -->
-            <li class="publication-item">
-                <span class="pub-title">HyperPointFormer</span>
-                <span class="pub-authors">Aldino Rizaldy</span>
-                <div class="pub-venue">IEEE JSTARS, 2025</div>
-                <div class="pub-links">
-                    <a href="#" target="_blank">[PDF]</a>
-                    <a href="#" target="_blank">IEEE</a>
-                </div>
-            </li>
+        <!-- Publications Section -->
+        <section>
+            <h2>Publications</h2>
+            <ul class="publications">
+                
+                <!-- Publication 1 -->
+                <li class="publication-item">
+                    <span class="pub-title">HyperPointFormer: Spatial-Spectral Point Cloud Processing</span>
+                    <div class="pub-authors"><strong>Aldino Rizaldy</strong>, Co-Author Name, Advisor Name</div>
+                    <div class="pub-venue">IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing (JSTARS), 2025</div>
+                    <div class="pub-links">
+                        <a href="#" target="_blank"><i class="fa-solid fa-file-pdf"></i> [PDF]</a>
+                        <a href="#" target="_blank"><i class="fa-solid fa-link"></i> IEEE Xplore</a>
+                        <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                    </div>
+                </li>
 
-        </ul>
+                <!-- Publication 2 -->
+                <li class="publication-item">
+                    <span class="pub-title">Multi-Stream Neural Network for Airborne LiDAR Point Cloud Classification</span>
+                    <div class="pub-authors"><strong>Aldino Rizaldy</strong>, Co-Author Name</div>
+                    <div class="pub-venue">Remote Sensing (MDPI), 2024</div>
+                    <div class="pub-links">
+                        <a href="#" target="_blank"><i class="fa-solid fa-file-pdf"></i> [PDF]</a>
+                        <a href="#" target="_blank"><i class="fa-solid fa-link"></i> MDPI Publisher</a>
+                        <a href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+
+        <!-- Optional: Academic Service / Teaching Section -->
+        <section>
+            <h2>Academic Service</h2>
+            <p class="bio">
+                <strong>Reviewer:</strong> IEEE TGRS, ISPRS Journal of Photogrammetry and Remote Sensing, Remote Sensing (MDPI)
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 Aldino Rizaldy. Built with plain HTML/CSS and hosted on GitHub Pages.</p>
+        </footer>
     </div>
 
 </body>
